@@ -5,6 +5,10 @@
 
 📄 **Paper**: [Tree-Sliced Sobolev IPM](https://openreview.net/pdf?id=HHNQSXaLkF) (ICLR 2026)
 
+**Authors**: Viet-Hoang Tran\*, Thanh Tran\*, Thanh Chu, Duy-Tung Pham, Trung-Khang Tran, Tam Le†, Tan Minh Nguyen†
+
+<sub>\* Equal contribution &nbsp;&nbsp; † Co-advising</sub>
+
 **Tree-Sliced Sobolev IPM (TS-Sobolev)** extends Tree-Sliced Wasserstein (TSW) to higher order by using regularized Sobolev IPMs over probability measures on tree metrics. It:
 
 - **Remains tractable for all orders** $p \ge 1$; for $p > 1$ it has the *same computational complexity* as TSW at $p = 1$.
