@@ -1,6 +1,6 @@
 ## Tree-Sliced Sobolev IPM
 
-[![Conference](https://img.shields.io/badge/ICLR_2026-under_review-blue)](https://openreview.net/forum?id=HHNQSXaLkF)
+[![Conference](https://img.shields.io/badge/ICLR_2026-accepted-blue)](https://openreview.net/forum?id=HHNQSXaLkF)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 📄 **Paper**: [Tree-Sliced Sobolev IPM](https://openreview.net/pdf?id=HHNQSXaLkF) (ICLR 2026)
