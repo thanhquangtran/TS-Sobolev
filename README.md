@@ -1,15 +1,15 @@
 ## Tree-Sliced Sobolev IPM
 
-[![Conference](https://img.shields.io/badge/ICLR-2026-in%20review-blue)](https://openreview.net/forum?id=HHNQSXaLkF)
+[![Conference](https://img.shields.io/badge/ICLR_2026-under_review-blue)](https://openreview.net/forum?id=HHNQSXaLkF)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 📄 **Paper**: [Tree-Sliced Sobolev IPM](https://openreview.net/pdf?id=HHNQSXaLkF) (ICLR 2026)
 
 **Tree-Sliced Sobolev IPM (TS-Sobolev)** extends Tree-Sliced Wasserstein (TSW) to higher order by using regularized Sobolev IPMs over probability measures on tree metrics. It:
 
-- **Remains tractable for all orders** \(p \ge 1\); for \(p > 1\) it has the *same computational complexity* as TSW at \(p = 1\).
-- **Recovers TSW exactly** at \(p = 1\), serving as a drop-in replacement with the added flexibility of tuning \(p\).
-- **Provides more favorable optimization landscapes** for \(p > 1\), with stricter convexity and smoother gradients that help capture fine-grained structure TSW misses.
+- **Remains tractable for all orders** $p \ge 1$; for $p > 1$ it has the *same computational complexity* as TSW at $p = 1$.
+- **Recovers TSW exactly** at $p = 1$, serving as a drop-in replacement with the added flexibility of tuning $p$.
+- **Provides more favorable optimization landscapes** for $p > 1$, with stricter convexity and smoother gradients that help capture fine-grained structure TSW misses.
 - **Extends to the spherical setting**, yielding the Spherical TS-Sobolev (STS-Sobolev) for probability measures on hyperspheres.
 - **Outperforms existing methods** across gradient flows, generative modeling, self-supervised learning, and topic modeling in both Euclidean and spherical settings.
 
@@ -33,7 +33,7 @@ This installs PyTorch with CUDA 11.8 and all Python dependencies needed to run t
 
 The core Euclidean TS-Sobolev implementation lives in `src/tree_sliced/ts_sobolev.py` (class `TSSobolev`), with tree generation utilities in `src/tree_sliced/utils.py`. After installing the package (`pip install -e .`), both are importable from the `tree_sliced` namespace.
 
-Below is a minimal example that computes a TS-Sobolev distance between two point clouds in \(\mathbb{R}^d\):
+Below is a minimal example that computes a TS-Sobolev distance between two point clouds in $\mathbb{R}^d$:
 
 ```python
 import torch
@@ -82,7 +82,7 @@ The `experiments/` folder is split into **Euclidean** and **spherical** settings
 
 #### Euclidean (`experiments/euclidean/`, Section 4.1)
 
-- **Gradient flow on \(\mathbb{R}^d\)** (`gradient-flow/`)
+- **Gradient flow on $\mathbb{R}^d$** (`gradient-flow/`)
   - `GradientFlow.py` — particle transport toward Gaussian targets; benchmarks SW, TSW, and TS-Sobolev.
   - `spectral_bias_exp.py` — **spectral bias analysis**: shows that TS-Sobolev\(_2\) recovers both low- and high-frequency components of a 1-D target density where TSW (p=1) is bad at high-frequency components. See `gradient-flow/README.md` for full usage.
 - **Denoising Diffusion GAN** (`denoising-diffusion-gan/`) — TS-Sobolev as a discriminator loss for CIFAR-10 generation.
@@ -90,7 +90,7 @@ The `experiments/` folder is split into **Euclidean** and **spherical** settings
 
 #### Spherical (`experiments/spherical/`,  Section 4.2)
 
-- **Gradient flow on \(\mathbb{S}^d\)** (`gradient_flow/`) — particle transport on the hypersphere using the Spherical Tree-Sliced Sobolev IPM (STS-Sobolev).
+- **Gradient flow on $\mathbb{S}^d$** (`gradient_flow/`) — particle transport on the hypersphere using the Spherical Tree-Sliced Sobolev IPM (STS-Sobolev).
 - **Self-supervised learning** (`ssl/`) — TS-Sobolev / STS-Sobolev as a uniformity loss on the unit hypersphere for representation learning.
 
 Each subdirectory has its own README or inline comments describing configuration and how to run the corresponding experiments.
