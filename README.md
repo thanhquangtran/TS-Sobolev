@@ -49,7 +49,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 # Tree system parameters
 ntrees = 250   # number of trees (L in the paper)
 nlines = 4     # lines per tree (k in the paper)
-d = 64         # data dimension (must satisfy d >= nlines for gaussian_orthogonal)
+d = 64         # data dimension
 
 # Sample two empirical measures (same number of points)
 N = 500
@@ -60,14 +60,13 @@ Y = torch.randn(N, d, device=device)
 mean_X = X.mean(dim=0, keepdim=True)   # shape (1, d)
 
 # Sample concurrent-line tree systems
-# gaussian_orthogonal produces orthonormal line directions (requires d >= nlines)
 theta, intercept = generate_trees_frames(
     ntrees=ntrees,
     nlines=nlines,
     d=d,
     mean=mean_X,
     std=0.1,
-    gen_mode="gaussian_orthogonal",
+    gen_mode="gaussian_raw",
     device=device,
 )
 
